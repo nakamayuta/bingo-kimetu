@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ビンゴ</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .init {
+            display: flex;
+            flex-direction: column;
+            justify-content:center;
+            align-items: center;
+        }
+        .link {
+            width: 45%;
+            height: 100px;
+            text-decoration: none;
+            overflow: hidden;
+        }
+        .link span{
+            font-size: 45px;
+            -webkit-text-stroke: 5px transparent;
+            white-space: nowrap;
+        }
+        .guest-url {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .guest-url .tlt {
+            -webkit-text-stroke: 3px transparent;
+            font-size: 24px;
+            margin-right: 10px;
+        }
+        .guest-url .wrap{
+            background: #ecf0f1;
+        }
+        .guest-url .wrap .url {
+            display: block;
+            padding: 5px;
+            font-family: Yu Gothic UI;
+            color: #34495e;
+            text-shadow: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper init">
+        <a href="/host" class="btn link to-host"><span>Bingoスタート</span></a>
+        <!-- <a href="/guest" class="btn link to-guest"><span>ゲスト</span></a> -->
+        <div class="guest-url">
+            <span class="tlt">ゲストURL:</span>
+            <div class="wrap">
+            <span class="url"></span>
+            </div>
+        </div>
+    </div>
+    <script>
+        let guestUrl = document.querySelector('.guest-url .url');
+        guestUrl.textContent = `${window.location.href}guest`;
+    </script>
+</body>
+</html>
